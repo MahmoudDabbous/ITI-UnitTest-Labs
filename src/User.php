@@ -13,23 +13,19 @@ class User
     $this->email = $email;
   }
 
-  public function getName()
+  public function name($name = '')
   {
-    return $this->name;
+    if($name === '')
+      return $this->name;
+    else
+      $this->name = $name;
   }
 
-  public function getEmail()
+  public function email($email = '')
   {
-    return $this->email;
-  }
-
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-
-  public function setEmail($email)
-  {
-    $this->email = $email;
+    if($email === '')
+      return $this->email;
+    else
+      $this->email = $email;
   }
 }

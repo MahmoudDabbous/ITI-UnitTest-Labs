@@ -9,10 +9,8 @@ use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
 
 #[UsesClass(User::class)]
-#[CoversFunction('User::getName')]
-#[CoversFunction('User::getEmail')]
-#[CoversFunction('User::setName')]
-#[CoversFunction('User::setEmail')]
+#[CoversFunction('User::name')]
+#[CoversFunction('User::email')]
 class UserTest extends TestCase
 {
   private $user;
@@ -25,26 +23,26 @@ class UserTest extends TestCase
   #[Test]
   public function testName()
   {
-    $this->assertEquals('Dabbous', $this->user->getName());
+    $this->assertEquals('Dabbous', $this->user->name());
   }
 
   #[Test]
   public function testChangeName()
   {
-    $this->user->setName('Noha');
-    $this->assertEquals('Noha', $this->user->getName());
+    $this->user->name('Noha');
+    $this->assertEquals('Noha', $this->user->name());
   }
 
   #[Test]
   public function testEmail()
   {
-    $this->assertEquals('dabbous@example.com', $this->user->getEmail());
+    $this->assertEquals('dabbous@example.com', $this->user->email());
   }
 
   #[Test]
   public function testChangeEmail()
   {
-    $this->user->setEmail('nohasalah@iti.gov.eg');
-    $this->assertEquals('nohasalah@iti.gov.eg', $this->user->getEmail());
+    $this->user->email('nohasalah@iti.gov.eg');
+    $this->assertEquals('nohasalah@iti.gov.eg', $this->user->email());
   }
 }
